@@ -8,19 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '16.x'
-
-      - name: Prepare cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
@@ -28,27 +15,4 @@ jobs:
           SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
           SLACK_ICON: https://github.com/rtCamp.png?size=48
           SLACK_MESSAGE: 'Post Content :rocket:'
-          SLACK_TITLE: Post Title
-          SLACK_USERNAME: rtCamp
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-
-      # - name: Install node-sass
-      #   run: npm i node-sass
-
-      # - name: Install strip-indent
-      #   run: npm i strip-indent
-
-      - name: Install dependencies
-        run: npm i
-
-      # - name: Run tests
-      #   run: npm run test:ci
-
-# - https://hooks.slack.com/services/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
-#   - https://nexaas.slack.com/services/B037P1JE94H
-
-# https://hooks.slack.com/services/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
-# https://duartech.slack.com/services/B0383UEJWJY?added=1
-
-# https://hooks.slack.com/services/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
-# https://hooks.slack.com/services/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
