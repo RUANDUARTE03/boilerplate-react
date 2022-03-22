@@ -13,26 +13,33 @@ jobs:
         with:
           # For posting a rich message using Block Kit
           payload: |
-            {
-              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+            {              
               "blocks": [
                 {
                   "type": "section",
-                  "text": {
+                  "fields": [
+
+                  {
                     "type": "mrkdwn",
-                    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                    "text": "*Branch *\nComputer (laptop)"
                   }
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Project *\nSubmitted Aut 10"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Commit *\n"${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}""
+                  },
+                  {
+                    "type": "mrkdwn",                   
+                    "text": "*Committer *\n\"Cheetah Pro 15\" - Fast, really fast\""
+                  }
+                  ]
                 }
               ]
             }
-        env:
-          SLACK_CHANNEL: geral
-          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#efefef'
-          SLACK_ICON: https://raw.githubusercontent.com/RUANDUARTE03/boilerplate-react/main/public/logo192.png
-          SLACK_MESSAGE: 'Post Content :rocket:'
-          SLACK_TITLE: Message
-          SLACK_USERNAME: incoming-webhook
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        env:          
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
 
