@@ -33,6 +33,10 @@ jobs:
                   "type": "mrkdwn",
                   "text": "*Project:*\n<https://github.com/RUANDUARTE03/boilerplate-react.git |Boilerplate-react>"
                 },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Specs:*\n\"Cheetah Pro 15\" - Fast, really fast\""
+                }
               ]
             }
           ]
