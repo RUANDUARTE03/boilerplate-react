@@ -31,14 +31,14 @@ jobs:
                   }
                   {
                     "type": "mrkdwn",
-                    "text": "*Project *\n\boilerplate-react"
+                    "text": "*Project *\nboilerplate-react"
                   },
                   {
                     "type": "mrkdwn",
                     "text": "Commit: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.message }}"
                   {
                     "type": "mrkdwn",                   
-                    "text": "*Committer *\n\"Clara""
+                    "text": "*Committer *\n"Clara""
                   }
                   ]
                 }
