@@ -14,7 +14,7 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.message }}",              
+              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.message }}",             
               "blocks": [
                 {
                   "type": "section",
@@ -22,19 +22,18 @@ jobs:
 
                   {
                     "type": "mrkdwn",
-                    "text": "*Branch *\nComputer (laptop)"
+                    "text": "*Branch *\nBoilerplate react"
                   }
                   {
                     "type": "mrkdwn",
-                    "text": "*Project *\nSubmitted Aut 10"
+                    "text": "*Project *\n\"<https://github.com/RUANDUARTE03/boilerplate-react/actions | boilerplate-react>"
                   },
                   {
                     "type": "mrkdwn",
                     "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.message }}"
-                  },
                   {
                     "type": "mrkdwn",                   
-                    "text": "*Committer *\n\"Cheetah Pro 15\" - Fast, really fast\""
+                    "text": "*Committer *\n\"Clara""
                   }
                   ]
                 }
