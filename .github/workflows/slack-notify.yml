@@ -25,17 +25,17 @@ jobs:
 
                   {
                     "type": "mrkdwn",
-
-                    "text": "*Branch *\nBoilerplate react"
-
+                    
+                    "text": "*Branch *\nNotify-slack"
+                  
                   }
                   {
                     "type": "mrkdwn",
-                    "text": "*Project *\n\"<https://github.com/RUANDUARTE03/boilerplate-react/actions | boilerplate-react>"
+                    "text": "*Project *\n\boilerplate-react"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.message }}"
+                    "text": "Commit: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.message }}"
                   {
                     "type": "mrkdwn",                   
                     "text": "*Committer *\n\"Clara""
