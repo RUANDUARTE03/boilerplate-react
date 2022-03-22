@@ -1,10 +1,10 @@
 name: Slack Notification Demo
 
 on: [push]
+  
 
 jobs:
-  tests:
-    name: Slack Notification
+  notifySlack:    
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,5 +26,14 @@ jobs:
               ]
             }
         env:
+          SLACK_CHANNEL: geral
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#efefef'
+          SLACK_ICON: https://raw.githubusercontent.com/RUANDUARTE03/boilerplate-react/main/public/logo192.png
+          SLACK_MESSAGE: 'Post Content :rocket:'
+          SLACK_TITLE: Message
+          SLACK_USERNAME: incoming-webhook
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+          
