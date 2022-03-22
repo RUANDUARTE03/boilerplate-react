@@ -25,7 +25,7 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_COLOR: "#9e2a2b"
-          SLACK_WEBHOOK: 'https://hooks.slack.com/services/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'
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
       # - name: Install node-sass
       #   run: npm i node-sass
