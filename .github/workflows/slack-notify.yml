@@ -1,8 +1,7 @@
 name: Slack Notification Demo
 
-on: 
-  push_request:
-    branches: [ notify-slack ]
+on: [push]
+  
 
 jobs:
   notifySlack:    
