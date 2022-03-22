@@ -31,7 +31,7 @@ jobs:
                   }
                   {
                     "type": "mrkdwn",
-                    "text": "*Project *\nboilerplate-react"
+                    "text": "*Project *\n<https://github.com/RUANDUARTE03/boilerplate-react.git | Boilerplate react>"
                   },
                   {
                     "type": "mrkdwn",
