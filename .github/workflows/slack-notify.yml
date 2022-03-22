@@ -12,37 +12,38 @@ jobs:
         uses: slackapi/slack-github-action@v1.18.0
         with:
           # For posting a rich message using Block Kit
-          payload: {
-          "blocks": [
-            {
-              "type": "section",
-              "fields": [
-                {
-                  "type": "mrkdwn",
-                  "text": "*Branch:*\nnotify-slack"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Commit:*\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Committer:*\nClara"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Project:*\n<https://github.com/RUANDUARTE03/boilerplate-react.git |Boilerplate-react>"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Specs:*\n\"Cheetah Pro 15\" - Fast, really fast\""
-                }
-              ]
-            }
-          ]
-        }
-  
-  env:      
+          payload: |
+          {
+            "blocks": [
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Branch:*\nnotify-slack"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Commit:*\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Committer:*\nClara"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Project:*\n<https://github.com/RUANDUARTE03/boilerplate-react.git |Boilerplate-react>"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Specs:*\n\"Cheetah Pro 15\" - Fast, really fast\""
+                  }
+                ]
+              }
+            ]        
+          }
+      
+      env:
 
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK    
