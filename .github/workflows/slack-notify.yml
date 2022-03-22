@@ -14,38 +14,34 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-
-              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.message }}",             
               "blocks": [
-		{
-			"type": "section",
-			"fields": [
-				{
-					"type": "mrkdwn",
-					"text": "*Type:*\nComputer (laptop)"
-				},
-				{
-					"type": "mrkdwn",
-					"text": "*When:*\nSubmitted Aut 10"
-				},
-				{
-					"type": "mrkdwn",
-					"text": "*Last Update:*\nMar 10, 2015 (3 years, 5 months)"
-				},
-				{
-					"type": "mrkdwn",
-					"text": "*Reason:*\nAll vowel keys aren't working."
-				},
-				{
-					"type": "mrkdwn",
-					"text": "*Specs:*\n\"Cheetah Pro 15\" - Fast, really fast\""
-				}
-			]
-		}
-	]
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Type:*\nComputer (laptop)"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*When:*\nSubmitted Aut 10"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Last Update:*\nMar 10, 2015 (3 years, 5 months)"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Reason:*\nAll vowel keys aren't working."
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Specs:*\n\"Cheetah Pro 15\" - Fast, really fast\""
+                    }
+                  ]
+                }
+              ]
             }
-
         env:         
-
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
