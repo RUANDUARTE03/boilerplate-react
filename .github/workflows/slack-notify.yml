@@ -19,24 +19,20 @@ jobs:
                   "type": "section",
                   "fields": [
                     {
-                      "type": "plain_text",
-                      "text": "*Build:*\n${{ job.status }}",
-                      "emoji": true
+                      "type": "mrkdwn",
+                      "text": "*Build:*\n${{ job.status }}"
                     },
                     {
-                      "type": "plain_text",
-                      "text": "*Branch:*\n${{ github.head_ref || github.ref_name }}",
-                      "emoji": true
+                      "type": "mrkdwn",
+                      "text": "*Branch:*\n${{ github.head_ref || github.ref_name }}"
                     },
                     {
-                      "type": "plain_text",
-                      "text": "*Commit:*\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-                      "emoji": true
+                      "type": "mrkdwn",
+                      "text": "*Commit:*\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
                     },
                     {
-                      "type": "plain_text",
-                      "text": "*Committer:*\n${{ github.actor }}",
-                      "emoji": true
+                      "type": "mrkdwn",
+                      "text": "*Committer:*\n${{ github.actor }}"
                     }
                   ]
                 }
