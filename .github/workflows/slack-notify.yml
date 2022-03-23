@@ -28,7 +28,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*Last Update:*\nMar 10, 2015 (3 years, 5 months)"
+                      "text": "*Commit:*\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
                     },
                     {
                       "type": "mrkdwn",
