@@ -24,7 +24,7 @@ jobs:
                     },
                     {
                       "type": "mrkdwn",
-                      "text": "*When:*\nSubmitted Aut 10"
+                      "text": "*Branch:*\n${{ github.head_ref || github.ref_name }}"
                     },
                     {
                       "type": "mrkdwn",
