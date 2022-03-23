@@ -4,20 +4,20 @@ on: [push]
 
 jobs:
   test-1:
-    name: Slack Notification
+    name: Teste
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: npm i
-  notify-slac:
+  notify-slack:
     name: Slack Notification
     runs-on: ubuntu-latest
+    needs: [test-1]
     steps:
       - uses: actions/checkout@v2
       - name: Slack Notification
         uses: slackapi/slack-github-action@v1.18.0
-        if: always()
         with:
           # For posting a rich message using Block Kit
           payload: |
