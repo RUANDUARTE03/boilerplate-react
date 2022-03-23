@@ -48,6 +48,10 @@ jobs:
                     {
                       "type": "mrkdwn",
                       "text": "*Message:*\n${{ github.event.head_commit.message }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Project:*\n${{ github.action_repository }}"
                     }
                   ]
                 }
