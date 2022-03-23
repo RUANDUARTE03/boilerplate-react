@@ -29,7 +29,7 @@ jobs:
                   "fields": [
                     {
                       "type": "mrkdwn",
-                      "text": "*Build:*\n${{ job.status }}"
+                      "text": "*Build:*\n${{ needs.test-1.result }}"
                     },
                     {
                       "type": "mrkdwn",
