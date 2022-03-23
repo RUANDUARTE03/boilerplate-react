@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      # - name: Try to success
+      #   run: npm i
       - name: Try to fail
         run: exit 1
   notify-slack:
@@ -29,7 +31,7 @@ jobs:
                   "fields": [
                     {
                       "type": "mrkdwn",
-                      "text": "*Build:*\n${{ needs.test-1.result === 'success' && *SUCCESS* || *FAILURE* }}"
+                      "text": "*Build:*\n${{ needs.test-1.result }}"
                     },
                     {
                       "type": "mrkdwn",
@@ -42,6 +44,10 @@ jobs:
                     {
                       "type": "mrkdwn",
                       "text": "*Committer:*\n${{ github.actor }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Message:*\n${{ github.event.head_commit.message }}"
                     }
                   ]
                 }
