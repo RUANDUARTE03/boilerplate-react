@@ -10,6 +10,44 @@ jobs:
       - uses: actions/checkout@v2
       - name: Slack Notification
         uses: slackapi/slack-github-action@v1.18.0
+        with:
+          # For posting a rich message using Block Kit
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Build:*\n${{ job.status }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Branch:*\n${{ github.head_ref || github.ref_name }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Commit:*\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Committer:*\n${{ github.actor }}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:         
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+  tests:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Slack Notification
+        uses: slackapi/slack-github-action@v1.18.0
         if: always()
         with:
           # For posting a rich message using Block Kit
