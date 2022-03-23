@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm i
+      - name: Try to fail
+        run: exit 1
   notify-slack:
     name: Slack Notification
     runs-on: ubuntu-latest
